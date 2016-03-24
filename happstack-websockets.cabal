@@ -1,0 +1,22 @@
+name:                happstack-websockets
+version:             0.1.0.0
+synopsis:            websockets support for happstack-server
+homepage:            https://github.com/Happstack/happstack-websockets
+license:             BSD3
+license-file:        LICENSE
+author:              Jeremy Shaw
+maintainer:          jeremy@n-heptane.com
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Happstack.Server.WebSockets
+  build-depends:       base >=4.8 && <4.9,
+                       bytestring >=0.10 && <0.11,
+                       case-insensitive,
+                       containers,
+                       happstack-server,
+                       mtl,
+                       websockets
+  default-language:    Haskell2010
