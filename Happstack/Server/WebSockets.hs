@@ -20,7 +20,7 @@ runWebSocketsHappstackWith
   :: (ServerMonad m, MonadIO m) =>
      WS.ConnectionOptions
   -> WS.ServerApp
-  -> m ()
+  -> m a
 runWebSocketsHappstackWith options app =
   do req <- askRq
      escapeHTTP $ \timeoutIO -> do
@@ -46,7 +46,9 @@ runWebSocketsHappstackWith options app =
                             , WS.requestSecure  = rqSecure req
                             }
 
-forkPingThread :: WS.Connection -> IO ()
+-- | a ping thread to keep the connection alive on some browsers
+forkPingThread :: WS.Connection
+               -> IO ()
 forkPingThread connection =
   do _ <- forkIO pingThread
      pure ()
@@ -63,7 +65,7 @@ forkPingThread connection =
 
 runWebSocketsHappstack :: (ServerMonad m, MonadIO m) =>
                           WS.ServerApp
-                       -> m ()
+                       -> m a
 runWebSocketsHappstack =
   runWebSocketsHappstackWith WS.defaultConnectionOptions
 
