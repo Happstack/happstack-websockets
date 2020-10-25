@@ -12,8 +12,8 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     Happstack.Server.WebSockets
-  build-depends:       base >=4.8 && <4.13,
-                       bytestring >=0.10 && <0.11,
+  build-depends:       base >=4.8 && <4.15,
+                       bytestring >=0.10 && <0.12,
                        case-insensitive,
                        containers,
                        happstack-server,
