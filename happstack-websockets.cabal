@@ -1,6 +1,7 @@
 name:                happstack-websockets
 version:             0.1.0.0
 synopsis:            websockets support for happstack-server
+description:         webockets allows clients to keep an open connection to the server for bidirectional communication                     
 homepage:            https://github.com/Happstack/happstack-websockets
 license:             BSD3
 license-file:        LICENSE
@@ -9,6 +10,10 @@ maintainer:          jeremy@n-heptane.com
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
+
+source-repository head
+    type:     git
+    location: https://github.com/Happstack/happstack-websockets.git
 
 library
   exposed-modules:     Happstack.Server.WebSockets
