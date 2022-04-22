@@ -1,7 +1,7 @@
 name:                happstack-websockets
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            websockets support for happstack-server
-description:         webockets allows clients to keep an open connection to the server for bidirectional communication                     
+description:         webockets allows clients to keep an open connection to the server for bidirectional communication
 homepage:            https://github.com/Happstack/happstack-websockets
 license:             BSD3
 license-file:        LICENSE
@@ -10,6 +10,7 @@ maintainer:          jeremy@n-heptane.com
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
+tested-with:         GHC==8.0.2, GHC==8.2.2, GHC==8.4.4, GHC==8.6.5, GHC==8.8.4, GHC==8.10.7, GHC==9.0.2, GHC==9.2.2
 
 source-repository head
     type:     git
@@ -17,11 +18,11 @@ source-repository head
 
 library
   exposed-modules:     Happstack.Server.WebSockets
-  build-depends:       base >=4.8 && <4.15,
+  build-depends:       base >=4.8 && <4.17,
                        bytestring >=0.10 && <0.12,
-                       case-insensitive,
-                       containers,
-                       happstack-server,
-                       mtl,
-                       websockets
+                       case-insensitive < 1.3,
+                       containers < 0.7,
+                       happstack-server < 7.8,
+                       mtl < 2.3,
+                       websockets < 0.13
   default-language:    Haskell2010
