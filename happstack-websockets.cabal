@@ -1,5 +1,5 @@
 name:                happstack-websockets
-version:             0.1.0.1
+version:             0.1.0.2
 synopsis:            websockets support for happstack-server
 description:         webockets allows clients to keep an open connection to the server for bidirectional communication
 homepage:            https://github.com/Happstack/happstack-websockets
@@ -18,11 +18,11 @@ source-repository head
 
 library
   exposed-modules:     Happstack.Server.WebSockets
-  build-depends:       base >=4.8 && <4.17,
-                       bytestring >=0.10 && <0.12,
+  build-depends:       base >=4.8 && <4.21,
+                       bytestring >=0.10 && <0.13,
                        case-insensitive < 1.3,
-                       containers < 0.7,
-                       happstack-server < 7.8,
-                       mtl < 2.3,
-                       websockets < 0.13
+                       containers < 0.8,
+                       happstack-server < 7.10,
+                       mtl < 2.4,
+                       websockets < 0.14
   default-language:    Haskell2010
